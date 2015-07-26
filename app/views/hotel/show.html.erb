@@ -5,4 +5,15 @@
       
       
    
+    <div class="cards row">
+      <% @comments.each do |comment| %>
+      <div class="card col-xs-4">
+      
+        <h2><%= comment.name %></h2>
+        <p><%= comment.description %></p>
+       
+      </div>
+      <% end %>
     </div>
+
+  </div>

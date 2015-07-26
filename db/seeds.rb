@@ -6,4 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Comment.create(name: "A great hotel. Thanks for this", description: "Went there in July. Thanks for keeping it clean!",hotel_id:1)
+Comment.create(name:'Testing',description: 'Went there in July. Thanks for keeping it clean!',hotel_id:1,author_id:1)
+#Hotel.create(name:'New hotel',description:'testing description goes here',country_id:2)
