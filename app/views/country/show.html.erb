@@ -1,0 +1,18 @@
+
+<div class="tag">
+  <div class="container">
+    <h2><%= @country.name %></h2>
+
+    <div class="cards row">
+      <% @hotels.each do |hotel| %>
+      <div class="card col-xs-4">
+      
+        <h2><%= hotel.name %></h2>
+        <p><%= hotel.description %></p>
+        <%= link_to "See more", hotel_path(hotel) %>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
