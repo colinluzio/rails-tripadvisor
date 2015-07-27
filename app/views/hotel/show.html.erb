@@ -2,8 +2,7 @@
 
    
    <p><%= @hotel.description %></p>
-      
-      
+
    
     <div class="cards row">
       <% @comments.each do |comment| %>
@@ -11,7 +10,7 @@
       
         <h2><%= comment.name %></h2>
         <p><%= comment.description %></p>
-       
+        <p><%= @author.name %></p>
       </div>
       <% end %>
     </div>
