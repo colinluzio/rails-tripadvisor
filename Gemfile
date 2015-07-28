@@ -5,6 +5,10 @@ source 'http://rubygems.org'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem'jquery-rails'
+gem 'simple_form'
+gem 'rails-footnotes','>=3.7.9',:group=>:development
+gem 'bootstrap-sass','~>2.3.1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
