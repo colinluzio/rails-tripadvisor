@@ -6,7 +6,7 @@ module SessionsHelper
 	end
 	
 	# setter method
-	def current_user =(user)
+	def current_user=(user)
 		@current_user = user
 	end
 	
