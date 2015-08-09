@@ -1,6 +1,19 @@
 class UsersController < ApplicationController
+	before_action :authorize
 	def new
 		@user = User.new
+	end
+	
+	def authorize
+		unless User.find_by(id: session[:user_id])
+		redirect_to login_url, notice: "You trying to login?"
+		end
+		
+		@user = User.find(params[:id])
+		sessionId = session[:user_id]
+		if @user.id != sessionId
+			redirect_to '/users/' +sessionId.to_s
+		end
 	end
 	
 	def create
@@ -15,5 +28,6 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
+		@number = session[:user_id]
 	end
 end
