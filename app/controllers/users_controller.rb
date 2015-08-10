@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 	
 	def authorize
 		unless User.find_by(id: session[:user_id])
-		redirect_to login_url, notice: "You trying to login?"
+		redirect_to login_url, notice: "You trying to login?" and return
 		end
 		
 		@user = User.find(params[:id])

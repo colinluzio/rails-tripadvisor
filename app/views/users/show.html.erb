@@ -1,1 +1,2 @@
 <h1>User <%= @user.id %></h1>
+<%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete%>
