@@ -11,11 +11,11 @@ class CommentsController < ApplicationController
 	
 	def create
 	@comment = Comment.new(comment_params)
-	if @comment.save
-		redirect_to '/'
-	else
-		render 'new'
-	end
+	@comment.save!
+	respond_to do |format|
+		format.html {redirect_to @comment}
+		format.js #render comments/create.js.erb
+	end 
 	end
 	
 	private 
