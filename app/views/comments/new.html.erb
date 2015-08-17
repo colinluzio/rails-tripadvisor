@@ -1,17 +1,29 @@
+  <script>
+  $(document).ready(function(){
+  	$('.submit_button').click(function(e){
+	e.preventDefault(e);
+		  $.ajax({
+                 url: "/comments", // Route to the Script Controller method
+                type: "POST",
+            dataType: "json",
+                data:  { "name": "Testingcomment","description":"testdescription","author_id":1,"hotel_id":3,},
+             success: function(data, textStatus, xhr) {
+                    $('.testing').append(data.name);
+                      },
+               error: function() {
+                        alert("Ajax error!")
+                      }
+    });
+	});
+  });
+  </script>
   <!-- Your code here -->
-  <%= form_for(@comment,remote:true) do |f| %> 
-   <div class="field"> 
-    <%= f.label :title %><br> 
-    <%= f.text_area :name %> 
-  </div>  
-  <div class="field"> 
-    <%= f.label :message %><br> 
-    <%= f.text_area :description %> 
-  </div> 
-  
-  <%= f.hidden_field :author_id,  :value =>1 %>
-  <%= f.hidden_field :hotel_id,  :value =>2 %>
-  <div class="actions"> 
-    <%= f.submit "Create" %> 
-  </div> 
-<% end %>
+ <%= debug @user %>
+<%= 
+if @user
+render partial: "comment" 
+else
+
+end
+%>
+<div class="testing"></div>

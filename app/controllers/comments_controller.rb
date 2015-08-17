@@ -7,15 +7,24 @@ class CommentsController < ApplicationController
 	
 	def new
 	@comment = Comment.new
+	@user = User.find_by(id: session[:user_id])
 	end
 	
 	def create
-	@comment = Comment.new(comment_params)
-	@comment.save!
-	respond_to do |format|
-		format.html {redirect_to @comment}
-		format.js #render comments/create.js.erb
-	end 
+	@comment = Comment.new()
+	@newcomment = Comment.find_by(hotel_id: params[:hotel_id], author_id: params[:author_id])
+	
+	if @newcomment
+		respond_to do |format|
+			format.json { render :json => @newcomment}
+		end
+	else
+		@comment.save!
+		respond_to do |format|
+			format.json { render :json => @comment}
+		end
+	end	
+		 
 	end
 	
 	private 
