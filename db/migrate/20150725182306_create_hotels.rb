@@ -4,6 +4,7 @@ class CreateHotels < ActiveRecord::Migration
 	   t.string :name
 	   t.string :description
 	   t.references :country
+	   t.references :owner
        t.timestamps
     end
   end

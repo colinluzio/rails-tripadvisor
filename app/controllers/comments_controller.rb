@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 	end
 	
 	def create
-	@comment = Comment.new()
+	@comment = Comment.new(comment_params)
 	@newcomment = Comment.find_by(hotel_id: params[:hotel_id], author_id: params[:author_id])
 	
 	if @newcomment

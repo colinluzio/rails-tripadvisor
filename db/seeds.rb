@@ -8,4 +8,5 @@
 
 #Comment.create(name:'Testing',description: 'Went there in July. Thanks for keeping it clean!',hotel_id:1,author_id:1)
 #Hotel.create(name:'New hotel',description:'testing description goes here',country_id:2)
-Author.create(name: 'Colin',age:'35',country:'uk')
+#Author.create(name: 'Colin',age:'35',country:'uk')
+Owner.create(name: 'Colin',age:35,town:'London',country_id:2)

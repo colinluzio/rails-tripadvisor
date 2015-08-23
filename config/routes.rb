@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'country#index'
   get '/countries/:id', to: 'country#show', as: 'country'
-  get '/hotels/:id' => 'hotel#show', as: :'hotel'
+  #get '/hotels/:id' => 'hotel#show', as: :'hotel'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
    resources:users
    resources:sessions
    resources:comments
-  
+   resources:hotels
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
   

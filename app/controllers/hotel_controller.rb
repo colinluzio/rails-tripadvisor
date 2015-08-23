@@ -1,4 +1,10 @@
 class HotelController < ApplicationController
+ 
+ def new
+ 	 @countries = Country.all
+	 @hotel = Hotel.new
+ end
+ 
  def show
   @hotel = Hotel.find(params[:id])
   @comments = @hotel.comments
