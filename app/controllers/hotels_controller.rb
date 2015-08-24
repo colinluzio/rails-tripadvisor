@@ -14,7 +14,7 @@ class HotelsController < ApplicationController
  end
  
  def create
-	@hotel = Hotel.new(hotel_params)
+	@hotel = Hotel.new()
 	@hotel.save!
 		
 		 
