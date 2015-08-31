@@ -14,15 +14,17 @@ class HotelsController < ApplicationController
  end
  
  def create
-	@hotel = Hotel.new()
-	@hotel.save!
+	@hotel = Hotel.new(hotel_params)
+	
+	@hotel.save 
+    
 		
 		 
 	end
 	
 	private 
   	def hotel_params 
-   		  params.require(:hotel).permit(:name, :description, :owner_id, :country_id)
+   		  params.require(:hotel).permit(:name, :image, :description, :owner_id, :country_id)
   	end
 
 end

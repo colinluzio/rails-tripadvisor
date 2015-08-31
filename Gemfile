@@ -12,6 +12,7 @@ gem 'rails-footnotes','>=3.7.9',:group=>:development
 gem 'bootstrap-sass','~> 3.2.0'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.2"
+gem 'carrierwave'
 gem 'aws-sdk-v1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

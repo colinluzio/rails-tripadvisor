@@ -1,0 +1,18 @@
+  <h2><%= @hotel.name %></h2>
+
+   <%= image_tag @hotel.image_url %>    
+   <p><%= @hotel.description %></p>
+
+   
+    <div class="cards row">
+      <% @comments.each do |comment| %>
+      <div class="card col-xs-4">
+      
+        <h2><%= comment.name %></h2>
+        <p><%= comment.description %></p>
+        <p><%= @author.name %> | <%= comment.created_at%></p>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
