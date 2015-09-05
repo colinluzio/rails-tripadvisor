@@ -16,28 +16,28 @@ module ShowtimeHelper
 	if totaltime >  31536000
 		years = totaltime/31536000
 		timeExpression = years.to_s + ' years ago'
-	elseif totaltime >2592000
+	elsif totaltime >2592000
 		months = totaltime/2592000
 		timeExpression = months.to_s + ' months ago'
-	elseif totaltime > 604800
+	elsif totaltime > 604800
 		weeks = totaltime/604800
 		if weeks == 1
 			timeExpression = '1 week ago'
 		else
 			timeExpression = weeks.to_s + ' weeks ago'
 		end
-	elseif totaltime > 86400
+	elsif totaltime > 86400
 		days = totaltime/86400
 		timeExpression = days.to_s + ' days ago'
-	elseif totaltime > 3600
+	elsif totaltime > 3600
 		hours = totaltime/3600
 		timeExpression = hours.to_s + ' days ago'
-	elseif totaltime > 60
+	elsif totaltime > 60
 		minutes = totaltime/60
-		timeExprssion = minutes.to_s + ' minutes ago'
+		timeExpression = minutes.to_s + ' minutes ago'
 	else
 		seconds = totaltime
-		timeExpression seconds.to_s + ' seconds ago'	
+		timeExpression = seconds.to_s + ' seconds ago'	
     end
 	return timeExpression
   end
