@@ -1,8 +1,12 @@
 module CountryHelper
 	def get_stars(id)
 		comments = Comment.where(hotel_id: id)
-		totalStars = comments.sum/comments.count
+		if comments.count() == nil || comments.count() == 0
+			return 'no ratings yet'
+		else
+			totalStars = comments.sum(:stars)/comments.count()
+			return totalStars
+		end
 		
-		return totalStars
 	end
 end
