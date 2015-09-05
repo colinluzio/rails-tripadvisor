@@ -12,11 +12,13 @@ gem 'rails-footnotes','>=3.7.9',:group=>:development
 gem 'bootstrap-sass','~> 3.2.0'
 gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.2"
+gem 'rmagick'
 gem 'carrierwave'
 gem 'aws-sdk-v1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'rspec', '~> 3.0'
+gem 'jquery-fileupload-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

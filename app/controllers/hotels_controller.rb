@@ -16,10 +16,10 @@ class HotelsController < ApplicationController
  def create
 	@hotel = Hotel.new(hotel_params)
 	
-	@hotel.save 
-    
-		
-		 
+	@hotel.save 	
+	respond_to do |format|
+			format.json { render :json => @hotel}
+		end	 
 	end
 	
 	private 

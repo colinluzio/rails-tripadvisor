@@ -8,7 +8,7 @@
     <%= f.text_area :description %> 
   </div> 
    <div class="field"> 
-    <%= f.file_field :image %>
+    <%= f.file_field :image, multiple: true, name: "hotel[image]" %>
   </div> 
   <%= f.collection_select :country_id, @countries, :id, :name, include_blank: true %>
   <%= f.hidden_field :owner_id,  :value =>1 %>
@@ -17,3 +17,9 @@
     <%= f.submit "Create", :class => 'submit_button' %> 
   </div> 
 <% end %>
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+{%=o.name%}
+<div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
