@@ -173,6 +173,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-fileupload-rails
   jquery-rails
+  nokogiri
   paperclip (~> 4.2)
   protected_attributes
   rails (= 4.1.8)

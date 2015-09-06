@@ -4,4 +4,14 @@ class Hotel < ActiveRecord::Base
  has_many :comments
  
  mount_uploader :image, ImageUploader
+ before_save :get_latlong
+ 
+ def get_latlong
+ 	 # Get longitude and latitude from Google maps
+	 
+	encoded_url = URI.encode("http://maps.googleapis.com/maps/api/geocode/xml?address=#{@hotel.postcode},#{@hotel.country}&sensor=false")
+	@xml_doc = Nokogiri::XML(open(encoded_url).read)
+	@lat  =  @xml_doc.xpath("//GeocodeResponse//result//geometry//location//lat").text
+	@long = @xml_doc = @xml_doc.xpath("//GeocodeResponse//result//geometry//location//lng").text
+ end
 end

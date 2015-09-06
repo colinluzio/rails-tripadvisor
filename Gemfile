@@ -14,6 +14,7 @@ gem 'autoprefixer-rails'
 gem "paperclip", "~> 4.2"
 gem 'rmagick'
 gem 'carrierwave'
+gem 'nokogiri'
 gem 'aws-sdk-v1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

@@ -1,7 +1,7 @@
 class HotelsController < ApplicationController
  
  def new
- 	 @countries = Country.all
+	 @countries = Country.all
 	 @hotel = Hotel.new
  end
  
@@ -15,7 +15,6 @@ class HotelsController < ApplicationController
  
  def create
 	@hotel = Hotel.new(hotel_params)
-	
 	@hotel.save 	
 	respond_to do |format|
 			format.json { render :json => @hotel}
