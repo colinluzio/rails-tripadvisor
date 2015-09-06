@@ -2,11 +2,17 @@
   $(document).ready(function(){
   	$('.submit_button').click(function(e){
 	e.preventDefault(e);
+	var comment = {
+    name: 'Jeff',
+    description: 'Smith' ,
+	author_id: 1,
+	hotel_id: 3
+};
 		  $.ajax({
                  url: "/comments", // Route to the Script Controller method
                 type: "POST",
             dataType: "json",
-                data:  { "name": "Testingcomment","description":"testdescription","author_id":1,"hotel_id":3,},
+                data: comment,
              success: function(data, textStatus, xhr) {
                     $('.testing').append(data.name);
                       },

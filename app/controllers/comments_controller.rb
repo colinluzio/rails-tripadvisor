@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 	
 	def create
 	@comment = Comment.new(comment_params)
-	@newcomment = Comment.find_by(hotel_id: params[:hotel_id], author_id: params[:author_id])
+	#@newcomment = Comment.find_by(hotel_id: params[:hotel_id], author_id: params[:author_id])
 	
 	if @newcomment
 		respond_to do |format|
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 	
 	private 
   	def comment_params 
-   		  params.require(:comment).permit(:name, :description, :image, :author_id, :hotel_id)
+   		  params.permit(:name, :description, :author_id, :hotel_id, :stars)
   	end
 
 
