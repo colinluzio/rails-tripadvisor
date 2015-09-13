@@ -31,7 +31,21 @@
       					<% @comments.each do |comment| %>
       						<div class="card col-xs-12 review">
       							<div class="review-content">
-									<p>Stars : <%= comment.stars %></p>
+									<% $i = 0
+										$num = comment.stars.to_i
+
+										while $i < $num  do %>
+   											<i class="glyphicon glyphicon-star active-star"></i>
+  											<% $i +=1
+										end 
+									    $i = 0
+										$num = 5-comment.stars.to_i
+
+										while $i < $num  do %>
+   											<i class="glyphicon glyphicon-star inactive-star"></i>
+  											<% $i +=1
+										end %>
+									<p>Rating : <%= comment.stars %></p>
         							<h2><%= comment.name %></h2>
         							<p><%= comment.description %></p>
         						</div>
