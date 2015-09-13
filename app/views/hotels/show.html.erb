@@ -1,19 +1,64 @@
-  <h2><%= @hotel.name %></h2>
+ <div class="container">
 
-   <%= image_tag @hotel.image_url(:thumb) %>    
-   <p><%= @hotel.description %></p>
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-8">
+			<div class="main">
+				<div class="row">
+					<div class="col-xs-12 col-sm-2">
+				 
+				 	</div>
+				  	<div class="tab-content col-xs-12 col-sm-10">
+				 	
+					<h2><%= @hotel.name %></h2>
+
+   					<%= image_tag @hotel.image_url(:thumb) %>    
+   					<p><%= @hotel.description %></p>
 
    
-    <div class="cards row">
-      <% @comments.each do |comment| %>
-      <div class="card col-xs-4">
-      
-        <h2><%= comment.name %></h2>
-        <p><%= comment.description %></p>
-        <p><%= @author.name %> | <%= format_time(comment.created_at) %></p>
-		<p>Stars : <%= comment.stars %></p>
-      </div>
-      <% end %>
-    </div>
-
+    				
+				 	</div>
+				</div>
+				<div class="row reviews">
+					<div class="col-xs-12 col-sm-2">
+				 
+				 	</div>
+				  	<div class="tab-content col-xs-12 col-sm-10 reviews-container">
+				 	
+					<h2><%= @comments.count %> Reviews</h2>
+   
+    					<div class="cards row">
+      					<% @comments.each do |comment| %>
+      						<div class="card col-xs-12 review">
+      							<div class="review-content">
+									<p>Stars : <%= comment.stars %></p>
+        							<h2><%= comment.name %></h2>
+        							<p><%= comment.description %></p>
+        						</div>
+							<p><%= @author.name %> | <%= format_time(comment.created_at) %></p>
+							
+      						</div>
+      					<% end %>
+    					</div>
+				 	</div>
+				</div>
+		</div>
   </div>
+    <div class="col-xs-6 col-sm-4 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+  </div>
+  
+  </div>
+</div>

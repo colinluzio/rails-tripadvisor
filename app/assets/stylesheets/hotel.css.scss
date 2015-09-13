@@ -1,3 +1,23 @@
 // Place all the styles related to the hotel controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tab-content {
+box-shadow: 0 0.05em 10px rgba(0,0,0,0.2);
+}
+
+.reviews{
+margin-top:30px;
+}
+.reviews-container{
+border-top: solid 2px #7ECEF2;
+}
+.review{
+padding:10px;
+}
+.review-content{
+	box-shadow: 0 0.05em 10px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    position: relative;
+    padding: 15px;
+}
