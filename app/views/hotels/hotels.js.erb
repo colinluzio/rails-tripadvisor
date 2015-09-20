@@ -1,8 +1,7 @@
-
+alert('hello world');
 <% if @hotel.new_record? %>
   alert("Failed to upload painting: <%= j @hotel.errors.full_messages.join(', ').html_safe %>");
 <% else %>
   $("#hotels").append("<%= j render(@hotel) %>");
-  console.log("<%= j render(@hotel) %>")
-  alert('done');
+  alert(done);
 <% end %>

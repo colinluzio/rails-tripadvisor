@@ -3,6 +3,7 @@ class HotelsController < ApplicationController
  def new
 	 @countries = Country.all
 	 @hotel = Hotel.new
+	 @photo = Photo.new
  end
  
  def show
@@ -15,9 +16,16 @@ class HotelsController < ApplicationController
  
  def create
 	@hotel = Hotel.new(hotel_params)
-	@hotel.save 	
+	@hotel.save 
+	session[:hotel_number]=[]	
+	if(session[:hotel_number]==nil)
+		session[:hotel_number]=[]
+	end
+	session[:hotel_number].push(@hotel.id)
+	print session[:hotel_number]
 	respond_to do |format|
-			format.json { render :json => @hotel}
+			 format.json { render json: @hotel}
+  			 format.js   { render action: 'create', status: :created, location: @hotel }
 		end	 
 	end
 	

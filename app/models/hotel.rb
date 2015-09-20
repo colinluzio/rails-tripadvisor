@@ -14,4 +14,10 @@ class Hotel < ActiveRecord::Base
 	self.lat  =  @xml_doc.xpath("//GeocodeResponse//result//geometry//location//lat").text
 	self.long = @xml_doc = @xml_doc.xpath("//GeocodeResponse//result//geometry//location//lng").text
  end
+ def newid
+ 	return 'hello'
+ end
+ def newname
+ 	return self.newid
+ end
 end
