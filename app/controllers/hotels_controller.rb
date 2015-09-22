@@ -17,12 +17,12 @@ class HotelsController < ApplicationController
  def create
 	@hotel = Hotel.new(hotel_params)
 	@hotel.save 
-	session[:hotel_number]=[]	
-	if(session[:hotel_number]==nil)
-		session[:hotel_number]=[]
+	@hotelPhotos = session[:hotel_photos]
+	
+	@hotelPhotos.each do | i |
+		photo = Photo.find_by(id: i)
+		photo.update(hotel_id: @hotel.id)
 	end
-	session[:hotel_number].push(@hotel.id)
-	print session[:hotel_number]
 	respond_to do |format|
 			 format.json { render json: @hotel}
   			 format.js   { render action: 'create', status: :created, location: @hotel }

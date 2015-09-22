@@ -2,7 +2,7 @@ class Hotel < ActiveRecord::Base
  belongs_to :country
  belongs_to :owner, :foreign_key => "owner_id"
  has_many :comments
- 
+ has_many :photos
  mount_uploader :image, ImageUploader
  before_save :get_latlong
  
