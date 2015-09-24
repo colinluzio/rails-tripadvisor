@@ -1,10 +1,35 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="container">
 
-<%= simple_form_for(@user) do |f| %>
-	<%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.input :password_confirmation %>
-    <%= f.button :submit %>
-<% end %>    
+      <div class="row row-offcanvas row-offcanvas-right">
+
+    <div class="col-xs-12 col-sm-8">
+		<div class="main">
+		<h1>New user</h1>
+			<%= simple_form_for(@user) do |f| %>
+			<%= f.input :name %>
+    		<%= f.input :email %>
+    		<%= f.input :password %>
+    		<%= f.input :password_confirmation %>
+    		<%= f.button :submit %>
+		<% end %>    	
+				
+    	</div>
+  	</div>
+    <div class="col-xs-6 col-sm-4 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+  </div>
+  
+  </div>
+</div>

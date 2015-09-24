@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :authorize
+	before_action :authorize, only: [:show]
 	def new
 		@user = User.new
 	end
@@ -17,6 +17,12 @@ class UsersController < ApplicationController
 	end
 	
 	def create
+		@user = User.find(params[:id])
+		sessionId = session[:user_id]
+		if @user.id != nil
+			redirect_to '/users/' +sessionId.to_s
+		end
+
 		@user = User.new(params[:user])
 		if @user.save
 			redirect_to @user, notice: 'User was successfully created.'
