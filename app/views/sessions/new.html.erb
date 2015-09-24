@@ -1,11 +1,36 @@
-<h1>Sign In</h1>
+<div class="container">
 
-<% if flash[:error] %>
-	<p><%= flash[:error] %></p>
-<% end %>
+      <div class="row row-offcanvas row-offcanvas-right">
 
-<%= simple_form_for(:session, :url => sessions_path) do |f| %>
-	<%= f.input :email %>
-	<%= f.input :password %>
-    <%= f.button :submit %>
-<% end %>
+    <div class="col-xs-12 col-sm-8">
+		<div class="main">
+			<h1>Sign In</h1>
+				<% if flash[:error] %>
+				<p><%= flash[:error] %></p>
+				<% end %>
+
+				<%= simple_form_for(:session, :url => sessions_path) do |f| %>
+				<%= f.input :email %>
+				<%= f.input :password %>
+    			<%= f.button :submit %>
+				<% end %>
+    	</div>
+  	</div>
+    <div class="col-xs-6 col-sm-4 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+            <a href="#" class="list-group-item">Link</a>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+  </div>
+  
+  </div>
+</div>
