@@ -1,6 +1,6 @@
 class Hotel < ActiveRecord::Base
  belongs_to :country
- belongs_to :owner, :foreign_key => "owner_id"
+ belongs_to :user, :foreign_key => "user_id"
  has_many :comments
  has_many :photos
  mount_uploader :image, ImageUploader

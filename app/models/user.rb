@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+belongs_to :country
+has_one :hotel
 attr_accessor :password
 attr_accessible :name, :email, :password, :password_confirmation
 

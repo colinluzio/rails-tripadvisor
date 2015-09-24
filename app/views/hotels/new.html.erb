@@ -22,7 +22,7 @@
     <%= f.text_area :postcode %> 
   </div>
   <%= f.collection_select :country_id, @countries, :id, :name, include_blank: true %>
-  <%= f.hidden_field :owner_id,  :value =>1 %>
+  <%= f.hidden_field :user_id,  :value =>1 %>
   
   <div class="actions"> 
     <%= f.submit "Create", :class => 'submit_button' %> 
