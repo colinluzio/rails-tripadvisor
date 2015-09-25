@@ -1,0 +1,6 @@
+You have a hotel
+
+<h2><%= @hotel.first.name %></h2>
+<p><%= @hotel.first.description %></p>
+
+<%=link_to 'Edit listing', edit_hotel_path(:id => @hotel.first.id) %>

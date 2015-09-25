@@ -32,9 +32,10 @@ class UsersController < ApplicationController
 		render action: "new"
 		end
 	end
-	
+
 	def show
 		@user = User.find(params[:id])
+		@hotel = Hotel.where(:user_id => @user.id).limit(1)
 		@number = session[:user_id]
 	end
 end
