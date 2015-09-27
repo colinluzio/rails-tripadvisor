@@ -1,10 +1,20 @@
 class HotelsController < ApplicationController
+ before_action :authorize, only: [:new]
  def new
 	 @countries = Country.all
 	 @hotel = Hotel.new
 	 @photo = Photo.new
  end
-
+ def authorize
+		unless User.find_by(id: session[:user_id])
+		redirect_to login_url, notice: "You trying to login?" and return
+		end
+		sessionId = session[:user_id]
+		@hotel = Hotel.where(:user_id =>sessionId ).limit(1)
+		if  @hotel.present?
+			redirect_to '/users/' +sessionId.to_s
+		end
+	end
  def show
   @hotel = Hotel.find(params[:id])
   @comments = @hotel.comments
