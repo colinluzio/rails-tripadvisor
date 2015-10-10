@@ -36,6 +36,9 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+			if @user.user_type == 2
+				render action: "show_user"
+			end
 		@hotel = Hotel.where(:user_id => @user.id).limit(1)
 		@number = session[:user_id]
 	end
