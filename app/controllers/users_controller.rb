@@ -18,14 +18,15 @@ class UsersController < ApplicationController
 	end
 	
 	def create
-		@user = User.find(params[:id])
+		#@user = User.find(params[:id])
 		sessionId = session[:user_id]
-		if @user.id != nil
+		if sessionId != nil
 			redirect_to '/users/' +sessionId.to_s
 		end
 
 		@user = User.new(params[:user])
 		if @user.save
+			session[:user_id] = @user.id
 			redirect_to @user, notice: 'User was successfully created.'
 		else
 		# render :text => "here"

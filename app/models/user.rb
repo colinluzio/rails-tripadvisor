@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 belongs_to :country
 has_one :hotel
 attr_accessor :password
-attr_accessible :name, :email, :password, :password_confirmation
+attr_accessible :name, :email, :password, :password_confirmation, :user_type, :country_id, :phone
 
 email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 
