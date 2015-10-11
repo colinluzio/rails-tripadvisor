@@ -1,0 +1,9 @@
+<h1>Book now</h1>
+			<%= simple_form_for(:booking, :url => bookings_path) do |f| %>
+    		<%= f.input :startdate %>
+			<%= f.input :enddate %>
+    		<%= f.input :comments %>
+			<%= f.hidden_field :user_id,  :value =>@user.id %>
+			<%= f.hidden_field :hotel_id,  :value =>@hotel.id %>
+    		<%= f.button :submit %>
+		<% end %>    	

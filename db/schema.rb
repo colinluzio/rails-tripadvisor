@@ -11,12 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010070044) do
+ActiveRecord::Schema.define(version: 20151011091943) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
     t.string   "age"
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bookings", force: true do |t|
+    t.integer  "hotel_id"
+    t.integer  "user_id"
+    t.date     "startdate"
+    t.date     "enddate"
+    t.string   "comments"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

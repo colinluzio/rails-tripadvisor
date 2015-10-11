@@ -21,6 +21,10 @@ class HotelsController < ApplicationController
   @comment_id = Comment.find(1)
   @author = @comment_id.author_id
   @author = Author.find(@author)
+  sessionId = session[:user_id]
+  	if sessionId
+		@user = User.find(sessionId)
+	end
  end
  
  def create
